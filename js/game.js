@@ -16,8 +16,15 @@ function nextSlide(){
         case 1:
             stage.removeAllChildren();
             for( var i=0; i<canvas.width; i+=70 ){
-                if( i!= 490 ){
-                    oSolid.push(new Solid(i,canvas.height-70,imgGround));
+                if( i===490 ){ //Bridge+lava
+                    oSolid.push(new Solid(i,canvas.height-70,imgLava));
+                    oSolid.push(new Solid(i,canvas.height-70,imgBridge));
+                } else if( i===420 ){//Rounded edge next to bridge
+                    oSolid.push(new Solid(i,canvas.height-70,imgGround[0]));
+                } else if( i===560 ){//Rounded edge next to bridge
+                    oSolid.push(new Solid(i,canvas.height-70,imgGround[2]));
+                } else {//Solid grass block
+                    oSolid.push(new Solid(i,canvas.height-70,imgGround[1]));
                 }
             }
             for( var j=0; j<oSolid.length; j++){
@@ -37,9 +44,6 @@ function nextSlide(){
             stage.addChild(oPlayer.getShape());
         break;
 
-        case 4:
-
-        break;
     }
     stage.update();
 

@@ -4,6 +4,8 @@
 var imgStaticPlayer,
     imgAnimatedPlayer,
     imgGround =[],
+    imgBridge,
+    imgLava,
     oPlayer,
     oSolid =[],
     canvas,
@@ -23,5 +25,9 @@ function init() {
 
     imgStaticPlayer = loadImage("./img/staticPlayer.png");
     imgAnimatedPlayer = loadImage("./img/animatedPlayer.png");
-    imgGround = loadImage("./img/grassMid.png");
+    imgGround[0] = loadImage("./img/grassRight.png");
+    imgGround[1] = loadImage("./img/grassMid.png");
+    imgGround[2] = loadImage("./img/grassLeft.png");
+    imgBridge = loadImage("./img/bridge.png");
+    imgLava = loadImage("./img/lava.png");
 }
