@@ -1,12 +1,46 @@
-function startGame() {
-    var data = {
-        "images": [imgPlayer],
-        "frames": {"regX": 0, "height": 60, "count": 10, "regY": 0, "width": 44},
-        "animations": {"walk": [0, 9, "walk"]}
-    };
-    var sheet = new createjs.SpriteSheet(data);
-    var shape = new createjs.Sprite(sheet,"walk");
+"use strict";
 
-    stage.addChild(shape);
+function gameLoop(){
+
+    //Update Player
+    oPlayer.update();
+
+    // Redraw stage
     stage.update();
+}
+
+
+function nextSlide(){
+    slide++;
+    switch( slide ){
+        case 1:
+            stage.removeAllChildren();
+            for( var i=0; i<canvas.width; i+=70 ){
+                if( i!= 490 ){
+                    oSolid.push(new Solid(i,canvas.height-70,imgGround));
+                }
+            }
+            for( var j=0; j<oSolid.length; j++){
+                stage.addChild(oSolid[j].getShape());
+            }
+        break;
+
+        case 2:
+            oPlayer = new StaticPlayer(64,canvas.height-125,imgStaticPlayer);
+            stage.addChild(oPlayer.getShape());
+
+            createjs.Ticker.addEventListener("tick", gameLoop);
+        break;
+        case 3:
+            stage.removeChild(oPlayer.getShape());
+            oPlayer = new Player(64,canvas.height-125,imgAnimatedPlayer);
+            stage.addChild(oPlayer.getShape());
+        break;
+
+        case 4:
+
+        break;
+    }
+    stage.update();
+
 }

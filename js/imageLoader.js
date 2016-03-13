@@ -14,7 +14,7 @@ function loadImage(src){
 function handleImageLoaded(){
     numberOfImages--;
     if( numberOfImages === 0 ){
-        startGame();
+        // Images are loaded, add the callback function here
     }
 }
 
