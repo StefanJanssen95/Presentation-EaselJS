@@ -28,12 +28,12 @@ class Player {
         if( dir > 0 ){
             if( this.shape.currentAnimation != "walkRight"){
                 this.shape.gotoAndPlay("walkRight");
-            }
+            } else { this.shape.play() }
 
         } else if ( dir < 0 ){
             if( this.shape.currentAnimation != "walkLeft"){
                 this.shape.gotoAndPlay("walkLeft");
-            }
+            } else { this.shape.play() }
         } else {
             this.shape.gotoAndStop(this.shape.currentAnimation);
         }

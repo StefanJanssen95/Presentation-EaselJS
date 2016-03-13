@@ -43,7 +43,6 @@ function nextSlide(){
             oPlayer = new Player(64,canvas.height-125,imgAnimatedPlayer);
             stage.addChild(oPlayer.getShape());
         break;
-
     }
     stage.update();
 
