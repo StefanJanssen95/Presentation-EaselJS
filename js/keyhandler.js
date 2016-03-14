@@ -11,6 +11,11 @@ function keyDown(ev){
     }
     if( ev.code === "Tab" ){
         nextSlide();
+    } else if( ev.code === "KeyR" ){
+        oSolid = [];
+        stage.removeAllChildren();
+        stage.update();
+        slide = -1;
     }
 }
 

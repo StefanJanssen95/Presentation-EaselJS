@@ -6,11 +6,14 @@ var imgStaticPlayer,
     imgGround =[],
     imgBridge,
     imgLava,
+    imgCloud,
+    imgTree,
     oPlayer,
     oSolid =[],
+    oButton,
     canvas,
     stage,
-    slide=0;
+    slide=-1;
 
 //Add event listeners
 window.addEventListener("load", init);
@@ -30,4 +33,6 @@ function init() {
     imgGround[2] = loadImage("./img/grassLeft.png");
     imgBridge = loadImage("./img/bridge.png");
     imgLava = loadImage("./img/lava.png");
+    imgCloud = loadImage("./img/cloud.png");
+    imgTree = loadImage("./img/tree.png");
 }

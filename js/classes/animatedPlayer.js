@@ -4,8 +4,8 @@ class Player {
         var data = {
             "images": [image],
             "frames": {"regX": 0, "height": 60, "count": 20, "regY": 0, "width": 44},
-            "animations": { walkRight: [0, 9],
-                            walkLeft: [10, 19]}
+            "animations": { "walkRight": [0, 9],
+                            "walkLeft": [10, 19]}
         };
         this.sheet = new createjs.SpriteSheet(data);
 
@@ -52,7 +52,7 @@ class Player {
         } else {
             this.move(0);
         }
-        if( ( isKeyDown("ArrowUp") || isKeyDown(" ") ) && this.canJump ){
+        if( ( isKeyDown("ArrowUp") || isKeyDown("Space") ) && this.canJump ){
             this.canJump = false;
             this.vspeed = -12;
         }

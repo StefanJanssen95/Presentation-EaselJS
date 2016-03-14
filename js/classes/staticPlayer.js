@@ -31,14 +31,18 @@ class StaticPlayer {
         } else {
             this.move(0);
         }
-        if( ( isKeyDown("ArrowUp") || isKeyDown(" ") ) && this.canJump ){
+        if( ( isKeyDown("ArrowUp") || isKeyDown("Space") ) && this.canJump ){
             this.canJump = false;
             this.vspeed = -12;
         }
 
         this.shape.y += this.vspeed;
-        if( this.shape.y < this.maxY ){
+        if( this.shape.y < this.maxY || this.shape.x > 344 && this.shape.x+36 < 420){
             this.vspeed++;
+            if( this.shape.y > canvas.height ){
+                this.shape.y = this.maxY;
+                this.shape.x = 64;
+            }
         } else {
             this.shape.y = this.maxY;
             this.canJump = true;
