@@ -2,3 +2,7 @@ canvas{
     border: 1px solid black;
     background-color: #D0F4F7;
 }
+div>section{
+    float: left;
+    margin-right: 100px;
+}

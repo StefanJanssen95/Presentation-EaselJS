@@ -25,9 +25,13 @@ class StaticPlayer {
 
     update(){
         if( isKeyDown("ArrowRight") ){
-            this.move(1);
+            if( this.shape.y <= this.maxY || (this.shape.x>344 && this.shape.x+45<420 )){
+                this.move(1);
+            }
         } else if ( isKeyDown("ArrowLeft")) {
-            this.move(-1);
+            if( this.shape.y <= this.maxY || (this.shape.x>344 && this.shape.x+45<420 )){
+                this.move(-1);
+            }
         } else {
             this.move(0);
         }
@@ -37,7 +41,7 @@ class StaticPlayer {
         }
 
         this.shape.y += this.vspeed;
-        if( this.shape.y < this.maxY || this.shape.x > 344 && this.shape.x+36 < 420){
+        if( this.shape.y < this.maxY || this.shape.x > 342 && this.shape.x+36 < 420){
             this.vspeed++;
             if( this.shape.y > canvas.height ){
                 this.shape.y = this.maxY;

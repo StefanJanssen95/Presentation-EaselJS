@@ -34,6 +34,7 @@ class Player {
             if( this.shape.currentAnimation != "walkLeft"){
                 this.shape.gotoAndPlay("walkLeft");
             } else { this.shape.play() }
+
         } else {
             this.shape.gotoAndStop(this.shape.currentAnimation);
         }
